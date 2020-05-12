@@ -4,6 +4,9 @@ Android and iOS working pdf viewer!
 
 # Use this package as a library
 
+## Security
+-   Password protected pdf.
+
 ## 1. Depend on it
 
 Add this to your package's pubspec.yaml file:
