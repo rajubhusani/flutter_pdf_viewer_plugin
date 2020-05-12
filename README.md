@@ -35,8 +35,8 @@ Alternatively, your editor might support pub get or ```flutter packages get```. 
 Now in your Dart code, you can use:
 
 ```
-import 'package:flutter_pdf_viewer_plugin/flutter_pdf_viewer_plugin.dart';
 import 'package:flutter_pdf_viewer_plugin/pdf_viewer_plugin.dart';
+import 'package:flutter_pdf_viewer_plugin/pdf_viewer.dart';
 import 'package:flutter_pdf_viewer_plugin/pdf_viewer_scaffold.dart';
 ```
 
