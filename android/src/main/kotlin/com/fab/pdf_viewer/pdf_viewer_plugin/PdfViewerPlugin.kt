@@ -162,7 +162,7 @@ public class PdfViewerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.A
     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     intent.action = Intent.ACTION_SEND
-    intent.type = "*/*"
+    intent.type = "application/pdf"
     intent.putExtra(Intent.EXTRA_SUBJECT, "Share File")
     intent.putExtra(Intent.EXTRA_STREAM, fileUri)
     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
