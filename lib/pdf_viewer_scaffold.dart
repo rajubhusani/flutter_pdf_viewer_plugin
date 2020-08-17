@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pdf_viewer_plugin/pdf_viewer.dart';
+import 'package:native_pdf_viewer_plugin/pdf_viewer.dart';
 
 class PDFViewerScaffold extends StatefulWidget {
   final PreferredSizeWidget appBar;
