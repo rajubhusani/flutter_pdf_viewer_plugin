@@ -13,7 +13,7 @@ Add this to your package's pubspec.yaml file:
 
 ```
 dependencies:
-  flutter_pdf_viewer_plugin: ^1.0.0
+  native_pdf_viewer_plugin: ^0.0.3
 ```
 
 
