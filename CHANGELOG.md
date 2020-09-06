@@ -14,3 +14,7 @@
 ## 0.0.3
  
  * Updated plugin readme document
+
+## 0.0.4
+ 
+ * Updated plugin information

@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   path_provider: ^0.4.1
 
-  pdf_viewer_plugin:
+  native_pdf_viewer_plugin:
     # When depending on this package from a real application you should use:
     #   pdf_viewer_plugin: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
