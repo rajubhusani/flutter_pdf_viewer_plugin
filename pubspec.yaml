@@ -1,4 +1,4 @@
-name: native_pdf_viewer_plugin
+name: pdf_viewer_plugin
 description: A new flutter plugin project for Native PDF viewer.
 version: 0.0.4
 homepage: https://github.com/rajubhusani/flutter_pdf_viewer_plugin

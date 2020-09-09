@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:native_pdf_viewer_plugin/pdf_viewer_scaffold.dart';
+import 'package:pdf_viewer_plugin/pdf_viewer_scaffold.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() {

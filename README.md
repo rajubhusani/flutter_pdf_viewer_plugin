@@ -13,7 +13,7 @@ Add this to your package's pubspec.yaml file:
 
 ```
 dependencies:
-  native_pdf_viewer_plugin: ^0.0.4
+  flutter_pdf_viewer_plugin: ^0.0.4
 ```
 
 
@@ -35,9 +35,9 @@ Alternatively, your editor might support pub get or ```flutter packages get```. 
 Now in your Dart code, you can use:
 
 ```
-import 'package:native_pdf_viewer_plugin/pdf_viewer_plugin.dart';
-import 'package:native_pdf_viewer_plugin/pdf_viewer.dart';
-import 'package:native_pdf_viewer_plugin/pdf_viewer_scaffold.dart';
+import 'package:flutter_pdf_viewer_plugin/pdf_viewer_plugin.dart';
+import 'package:flutter_pdf_viewer_plugin/pdf_viewer.dart';
+import 'package:flutter_pdf_viewer_plugin/pdf_viewer_scaffold.dart';
 ```
 
 ### 4. Informations for Release on Android
