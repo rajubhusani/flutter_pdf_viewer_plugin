@@ -13,7 +13,7 @@ Add this to your package's pubspec.yaml file:
 
 ```
 dependencies:
-  flutter_pdf_viewer_plugin: ^0.0.4
+  pdf_viewer_plugin: ^0.0.4
 ```
 
 
@@ -36,7 +36,7 @@ Now in your Dart code, you can use:
 
 ```
 import 'package:flutter_pdf_viewer_plugin/pdf_viewer_plugin.dart';
-import 'package:flutter_pdf_viewer_plugin/pdf_viewer.dart';
+import 'package:pdf_viewer_plugin/pdf_viewer.dart';
 import 'package:flutter_pdf_viewer_plugin/pdf_viewer_scaffold.dart';
 ```
 
