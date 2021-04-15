@@ -30,12 +30,15 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   void initPlatformState() {
-    createFileOfPdfUrl().then((f) {
-      setState(() {
-        pathPDF = f.path;
-        print(pathPDF);
-      });
-    });
+    String path = 'assets/sample.pdf';
+    pathPDF = path;
+    print(pathPDF);
+    // createFileOfPdfUrl().then((f) {
+    //   setState(() {
+    //     pathPDF = f.path;
+    //     print(pathPDF);
+    //   });
+    // });
   }
 
   Future<File> createFileOfPdfUrl() async {
@@ -58,7 +61,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       appBar: AppBar(title: const Text('Plugin example app')),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text("Open PDF"),
           onPressed: () => Navigator.push(
             context,
@@ -93,6 +96,6 @@ class PDFScreen extends StatelessWidget {
         ),
         path: pathPDF,
         pass: password,
-        mode: "fromFile");
+        mode: "fromAsset");
   }
 }

@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:pdf_viewer_plugin/pdf_viewer_plugin.dart';
 
 class PDFViewerScaffold extends StatefulWidget {
-  final PreferredSizeWidget appBar;
-  final String path;
-  final bool primary;
-  final String pass;
-  final mode;
+  final PreferredSizeWidget? appBar;
+  final String? path;
+  final bool? primary;
+  final String? pass;
+  final String? mode;
 
   PDFViewScaffoldState state = PDFViewScaffoldState();
 
   PDFViewerScaffold(
-      {Key key,
+      {Key? key,
       this.appBar,
       @required this.path,
       this.primary = true,
@@ -30,8 +30,8 @@ class PDFViewerScaffold extends StatefulWidget {
 
 class PDFViewScaffoldState extends State<PDFViewerScaffold> {
   final pdfViwerRef = new PdfViewerPlugin();
-  Rect _rect;
-  Timer _resizeTimer;
+  Rect? _rect;
+  Timer? _resizeTimer;
 
   @override
   void initState() {
@@ -79,9 +79,9 @@ class PDFViewScaffoldState extends State<PDFViewerScaffold> {
     final fullscreen = widget.appBar == null;
 
     final mediaQuery = MediaQuery.of(context);
-    final topPadding = widget.primary ? mediaQuery.padding.top : 0.0;
+    final topPadding = widget.primary! ? mediaQuery.padding.top : 0.0;
     final top =
-        fullscreen ? 0.0 : widget.appBar.preferredSize.height + topPadding;
+        fullscreen ? 0.0 : widget.appBar!.preferredSize.height + topPadding;
     var height = mediaQuery.size.height - top;
     if (height < 0.0) {
       height = 0.0;

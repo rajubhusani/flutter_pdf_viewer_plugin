@@ -7,7 +7,7 @@ enum PDFViewState { shouldStart, startLoad, finishLoad }
 
 class PdfViewerPlugin {
   final _channel = const MethodChannel("pdf_viewer_plugin");
-  static PdfViewerPlugin _instance;
+  static PdfViewerPlugin? _instance;
 
   factory PdfViewerPlugin() => _instance ??= new PdfViewerPlugin._();
   PdfViewerPlugin._() {
@@ -24,8 +24,8 @@ class PdfViewerPlugin {
     }
   }
 
-  Future<Null> launch(String path, String pass, String mode,
-      {Rect rect}) async {
+  Future<Null> launch(String? path, String? pass, String? mode,
+      {Rect? rect}) async {
     final args = <String, dynamic>{'path': path, 'pass': pass, 'mode': mode};
     if (rect != null) {
       args['rect'] = {
@@ -65,13 +65,13 @@ class PdfViewerPlugin {
   }
 
   /// resize PDFViewer
-  Future<Null> resize(Rect rect) async {
+  Future<Null> resize(Rect? rect) async {
     final args = {};
     args['rect'] = {
-      'left': rect.left,
-      'top': rect.top,
-      'width': rect.width,
-      'height': rect.height
+      'left': rect?.left,
+      'top': rect?.top,
+      'width': rect?.width,
+      'height': rect?.height
     };
     await _channel.invokeMethod('resize', args);
   }

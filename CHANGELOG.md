@@ -18,3 +18,7 @@
 ## 0.0.4
  
  * Updated plugin information
+
+## 1.0.0-nullsafety.0
+
+ * Updated the plugin to support null safety
