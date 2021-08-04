@@ -89,7 +89,7 @@ class PDFScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.share),
               onPressed: () {
-                _state.currentState.shareFile(pathPDF);
+                _state.currentState?.shareFile(pathPDF);
               },
             ),
           ],

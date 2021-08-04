@@ -139,7 +139,7 @@ public class PdfViewerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.A
   }
 
   override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    Log.d("====", "onReattachedToActivityForConfigChanges")
   }
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
@@ -148,7 +148,7 @@ public class PdfViewerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.A
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    Log.d("====", "onDetachedFromActivityForConfigChanges")
   }
 
   private fun sharePDFFile(call: MethodCall, result: Result){
