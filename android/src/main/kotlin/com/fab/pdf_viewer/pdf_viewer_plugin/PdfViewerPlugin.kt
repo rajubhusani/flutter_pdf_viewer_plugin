@@ -20,6 +20,7 @@ import io.flutter.plugin.common.PluginRegistry
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
+import android.util.Log
 import java.io.File
 
 
