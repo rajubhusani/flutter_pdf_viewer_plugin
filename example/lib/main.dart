@@ -2,10 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'package:path_provider/path_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pdf_viewer_plugin/pdf_viewer_scaffold.dart';
-import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -31,14 +30,14 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   void initPlatformState() {
     String path = 'assets/sample.pdf';
-    pathPDF = path;
-    print(pathPDF);
-    // createFileOfPdfUrl().then((f) {
-    //   setState(() {
-    //     pathPDF = f.path;
-    //     print(pathPDF);
-    //   });
-    // });
+    // pathPDF = path;
+    // print(pathPDF);
+    createFileOfPdfUrl().then((f) {
+      setState(() {
+        pathPDF = f.path;
+        print(pathPDF);
+      });
+    });
   }
 
   Future<File> createFileOfPdfUrl() async {
@@ -96,6 +95,6 @@ class PDFScreen extends StatelessWidget {
         ),
         path: pathPDF,
         pass: password,
-        mode: "fromAsset");
+        mode: "fromFile");
   }
 }

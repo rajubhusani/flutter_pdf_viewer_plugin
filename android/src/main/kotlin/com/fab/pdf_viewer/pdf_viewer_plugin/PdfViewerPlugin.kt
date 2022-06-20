@@ -33,10 +33,12 @@ public class PdfViewerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.A
 //   lateinit var channel : MethodChannel
   private var flutterFullPdfViewerManager: FlutterFullPdfViewerManager? = null
   private var flutterBinding: FlutterPlugin.FlutterPluginBinding? = null
+  private lateinit var channel : MethodChannel
+  private var activity: Activity? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     flutterBinding = flutterPluginBinding
-    channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "pdf_viewer_plugin")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "pdf_viewer_plugin")
     channel.setMethodCallHandler(this)
   }
 
@@ -49,18 +51,6 @@ public class PdfViewerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.A
   // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
   // depending on the user's project. onAttachedToEngine or registerWith must both be defined
   // in the same class.
-  companion object {
-    lateinit var channel : MethodChannel
-    var activity: Activity? = null
-    var asset: String? = null
-    @JvmStatic
-    fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "pdf_viewer_plugin")
-      activity = registrar.activity()
-      channel.setMethodCallHandler(PdfViewerPlugin())
-    }
-  }
-
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     when (call.method) {
       "launch" -> openPDF(call, result)
@@ -85,7 +75,11 @@ public class PdfViewerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.A
     }
     val params = buildLayoutParams(call)
     activity?.addContentView(flutterFullPdfViewerManager?.pdfView, params)
-    flutterFullPdfViewerManager?.openPDF(src!!, pass, mode)
+    try{
+      flutterFullPdfViewerManager?.openPDF(src!!, pass, mode)
+    }catch (ex: IllegalStateException){
+      ex.printStackTrace()
+    }
     result.success(null)
   }
 

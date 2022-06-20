@@ -62,6 +62,5 @@ internal class FlutterFullPdfViewerManager(activity: Activity?) {
         result?.success(null)
 
         closed = true
-        PdfViewerPlugin.channel.invokeMethod("onDestroy", null)
     }
 }
